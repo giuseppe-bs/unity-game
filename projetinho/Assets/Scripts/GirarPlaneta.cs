@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class turnAround : MonoBehaviour {
+public class GirarPlaneta : MonoBehaviour {
 
     // Use this for initialization
-    public float rotateSpeed = 10f;
+    private float rotateSpeed = 100f;
 
 	void OnMouseDrag () {
         float rotX = Input.GetAxis("Mouse X") * rotateSpeed * Mathf.Deg2Rad;
         float roty = Input.GetAxis("Mouse Y") * rotateSpeed * Mathf.Deg2Rad;
 
-        transform.RotateAround(Vector3.up, -rotX);
-        transform.RotateAround(Vector3.right, roty);
+        transform.Rotate(Vector3.up, -rotX);
+        transform.Rotate(Vector3.right, roty);
     }
 }
