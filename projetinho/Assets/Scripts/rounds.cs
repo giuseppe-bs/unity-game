@@ -61,6 +61,11 @@ public class rounds : MonoBehaviour {
             - (t1n * (invest[0,0] + invest[3,0]));
         polution =5 * ((e * eletric) - (t * tecnologia) - (a * agua) + (materiais * m) + (f * comida));
         temp = (- (a * agua) + (p * polution))*100 + tempbase;
+
+        if(agua < 0.2 || eletric < 0.2 || tecnologia <0.2||comida<0.2||materiais<0.2||polution > 0.95|| temp > 27)
+        {
+            fim(false);
+        }
     }
 
     public void new_round()
@@ -70,5 +75,16 @@ public class rounds : MonoBehaviour {
         dif = acerto = 0;
         r.text = rodada.ToString();
         round_update();
+        if (rodada == 40) fim(true);
+    }
+    void fim(bool acabou)
+    {
+        if (acabou) {
+
+        }
+        else
+        {
+
+        }
     }
 }
