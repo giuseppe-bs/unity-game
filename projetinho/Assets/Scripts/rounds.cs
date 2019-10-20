@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class rounds : MonoBehaviour {
+    private GameObject end;
+    private GameObject ganhou, perdeu,terra;
+
+
     public float eletric;
     public float agua;
     public float tecnologia;
@@ -79,12 +83,21 @@ public class rounds : MonoBehaviour {
     }
     void fim(bool acabou)
     {
-        if (acabou) {
+        end = GameObject.Find("Fim");
+        terra = GameObject.Find("lowpoly_earth");
+        ganhou = GameObject.Find("gg");
+        perdeu = GameObject.Find("ff");
+        end.SetActive(true);
+        terra.SetActive(false);
 
+        if (acabou) {
+            ganhou.SetActive(false);
+            perdeu.SetActive(true);
         }
         else
         {
-
+            ganhou.SetActive(true);
+            perdeu.SetActive(false);
         }
     }
 }
